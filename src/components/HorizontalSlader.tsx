@@ -27,7 +27,7 @@ export const HorizontalSlader = ({title, movies}:Props) => {
             //El key extractor sirve solo para IOS o en caso de que no funcione el slide en android
             keyExtractor={(item) => item.id.toString()}
             horizontal={true}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
         />
     </View>
     )
