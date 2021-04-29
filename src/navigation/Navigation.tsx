@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { DetailScreen } from '../screens/DetailScreen';
 import { Movie } from '../interfaces/movieInterface';
-
+import SplashScreen from 'react-native-splash-screen'
 
 export type RootStackParams = {
     
@@ -14,6 +14,11 @@ export type RootStackParams = {
 const Stack = createStackNavigator<RootStackParams>();
 
 export const Navigation = () => {
+  
+useEffect(() => {
+  SplashScreen.hide();
+},[]);
+
   return (
     <Stack.Navigator
     screenOptions={{

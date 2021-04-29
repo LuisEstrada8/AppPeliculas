@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { View, ActivityIndicator, Dimensions } from 'react-native';
+import { View, ActivityIndicator, Dimensions, Image } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MoviePoster } from '../components/MoviePoster';
 import { useMovies } from '../Hooks/useMovies';
@@ -10,6 +10,7 @@ import { GradientBackground } from '../components/GradientBackground';
 import ImageColors from "react-native-image-colors"
 import { getImageColors } from '../helpers/getColores';
 import { GradientContext } from '../context/GradientContext';
+
 
 export const HomeScreen = () => {
 
@@ -38,14 +39,16 @@ useEffect(() => {
 }, [NowPlaying])
 
 
-
-    if (isLoading){
-        return (
-            <View style={{flex:1, justifyContent:'center', alignContent:'center'}}>
-                <ActivityIndicator color="blue" size={100}/>
-            </View>
-        )
-    }
+ //NOTE Aquiva el loading
+ if (isLoading){
+    return (
+        <View style={{flex:1, justifyContent:'center', alignContent:'center'}}>
+          
+            <ActivityIndicator color="blue" size={100}/>
+        </View>
+    )
+}
+    
     return (
         <GradientBackground>
         <ScrollView>
